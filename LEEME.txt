@@ -1,0 +1,34 @@
+WIKI DESIGN - EXPERIENCIA DE USUARIO
+Proyecto integrador, etapa 5 (navegacion interna)
+Daniel Alejandro Valdez Zavala y Maria Fernanda Damian Polo - UVM, 2026
+
+COMO VER LA PAGINA
+1. Descomprime la carpeta completa (no saques index.html por separado).
+2. Abre index.html con Chrome, Edge o Firefox. No necesita internet.
+
+COMO ABRIRLA EN DREAMWEAVER
+Sitio > Nuevo sitio > elige esta carpeta como carpeta raiz local
+y abre index.html desde el panel Archivos. Vista previa: F12 o
+Archivo > Vista previa en el navegador en tiempo real.
+
+ARCHIVOS
+index.html         Estructura y contenido (HTML5)
+css/estilos.css    Hoja general de WikiDesign (barra, menu lateral, pie)
+css/tema.css       Estilos del contenido del tema
+js/navegacion.js   Navegacion interna y visor de recursos
+img/               Recursos R1 a R6 (WebP y GIF) e icono
+assets/            Logotipos e iconos de temas de WikiDesign
+fonts/             Montserrat y Open Sans en WOFF2 (licencia SIL OFL 1.1)
+
+NAVEGACION (etapa 5)
+- Menu lateral: Temas de la wiki y Sumario de la pagina; el apartado
+  que se esta leyendo se resalta solo.
+- Al final de cada apartado: Anterior, Subir y Siguiente.
+- Cada figura: boton "Ver en grande" (visor con Anterior / Siguiente,
+  teclas de flecha y Esc) y enlaces al recurso anterior y siguiente.
+- Figura 6: boton "Reproducir de nuevo" para reiniciar la animacion.
+- Galeria de recursos con acceso a los seis recursos y a su apartado.
+- Boton flotante para volver arriba y enlaces en el pie de pagina.
+- Buscador: escribe una palabra (por ejemplo "pulgar") y lleva al apartado.
+
+PESO TOTAL: menos de 500 KB; las imagenes estan optimizadas en WebP.

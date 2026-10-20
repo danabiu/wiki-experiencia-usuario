@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experiencia de usuario (UX) y diseño de interfaz (UI), con el caso de rediseño de YouTube Music. Página de la wiki WikiDesign.">
+  <meta name="author" content="Daniel Alejandro Valdez Zavala y María Fernanda Damián Polo">
+  <title>Experiencia de usuario | WikiDesign</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/tema.css">
+</head>
+<body class="pagina-tema">
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<span id="inicio"></span>
+
+<header class="barra-superior">
+  <a class="marca" href="#inicio" aria-label="WikiDesign, ir al inicio">
+    <img src="assets/logo-principal.png" alt="WikiDesign">
+  </a>
+
+  <nav aria-label="Navegación principal">
+    <a href="#inicio" aria-current="page">Inicio</a>
+    <a href="#colabora">Colabora</a>
+    <a href="#acerca">Acerca de nosotros</a>
+  </nav>
+
+  <form class="buscador" id="buscador" role="search" action="#">
+    <label for="campo-busqueda">Buscar en la wiki</label>
+    <button type="submit" aria-label="Buscar">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.8" cy="10.8" r="6.8"></circle>
+        <path d="m16 16 4.5 4.5"></path>
+      </svg>
+    </button>
+    <input type="search" id="campo-busqueda" aria-label="Buscar" autocomplete="off">
+  </form>
+
+  <button type="button" class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="lateral">&#9776; Temas</button>
+</header>
+
+<aside class="sidebar" id="lateral" aria-label="Menú de temas">
+  <details class="panel-menu temas" open>
+    <summary>Temas</summary>
+    <nav aria-label="Temas">
+      <ul>
+        <li class="tema-activo"><a href="#inicio" aria-current="true"><img class="icono-tema" src="assets/icons/experiencia-usuario.png" alt=""><span>Experiencia de usuario</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/diseno-web.png" alt=""><span>Diseño web</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/design-thinking.png" alt=""><span>Design thinking</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/diseno-centrado-usuario.png" alt=""><span>Diseño centrado en el usuario</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/diseno-interaccion.png" alt=""><span>Diseño de interacción</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/arquitectura-informacion.png" alt=""><span>Arquitectura de la información</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/diseno-navegacion.png" alt=""><span>Diseño de navegación</span></a></li>
+        <li><a href="#inicio" title="En desarrollo por otro equipo"><img class="icono-tema" src="assets/icons/diseno-visual.png" alt=""><span>Diseño visual</span></a></li>
+      </ul>
+    </nav>
+  </details>
+
+  <details class="panel-menu sumario" open>
+    <summary>
+      <span class="sumario-titulo">Sumario</span>
+      <span class="sumario-tema-actual">Experiencia de usuario</span>
+    </summary>
+    <nav aria-label="Sumario">
+      <ol id="sumario">
+        <li><a href="#introduccion">Introducción</a></li>
+        <li><a href="#concierto">El concierto de tus sueños</a></li>
+        <li><a href="#ui-ux">¿Qué es UI y qué es UX?</a></li>
+        <li><a href="#comparacion">UI vs. UX</a></li>
+        <li><a href="#ergonomia">Ergonomía y alcance del pulgar</a></li>
+        <li><a href="#mapas">Mapas de calor</a></li>
+        <li><a href="#rediseno">Antes y después: YouTube Music</a></li>
+        <li><a href="#conclusiones">Conclusiones</a></li>
+        <li><a href="#recursos">Recursos multimedia</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+      </ol>
+    </nav>
+  </details>
+</aside>
+
+<main class="contenido contenido-tema" id="contenido">
+
+    <!-- 01 Introducción -->
+  <section class="seccion" id="introduccion">
+    <p class="etiqueta">01 · Introducción</p>
+    <h1>Experiencia de usuario</h1>
+    <p class="entrada">Detrás de cada clic hay una historia. En esta página explicamos la diferencia entre lo que vemos en una pantalla (UI) y lo que vivimos al usarla (UX), y lo aplicamos a un caso real: la app YouTube Music.</p>
+    <p>La <strong>experiencia de usuario (UX)</strong> es lo que una persona percibe, piensa y siente cuando utiliza un producto, servicio o interfaz. Una experiencia puede ser útil y agradable, o convertirse en una cadena de pasos confusos. Por eso, antes de dibujar pantallas hay que entender a las personas: qué necesitan, en qué contexto usan la app y qué les cuesta trabajo.</p>
+    <p>El recorrido de esta página va de una historia cotidiana (un concierto) a un rediseño concreto, pasando por las definiciones, la ergonomía del pulgar y los mapas de calor. Cada apartado tiene un recurso visual que puedes abrir en grande desde su botón o desde la <a href="#recursos">galería de recursos</a>.</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><h3>Comprender</h3><p>Qué es UI, qué es UX y por qué no son lo mismo.</p></div>
+      <div class="tarjeta"><h3>Observar</h3><p>Cómo sostenemos el celular y dónde tocamos la pantalla.</p></div>
+      <div class="tarjeta"><h3>Rediseñar</h3><p>Una propuesta para que YouTube Music se use con menos esfuerzo.</p></div>
+    </div>
+    <nav class="nav-seccion" aria-label="Navegación del apartado 1">
+      <span></span>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#concierto" class="siguiente">Siguiente: El concierto →</a>
+    </nav>
+  </section>
+
+  <!-- 02 Concierto -->
+  <section class="seccion" id="concierto">
+    <p class="etiqueta">02 · Storytelling</p>
+    <h2>El concierto de tus sueños</h2>
+    <p class="entrada">Una historia para entender, en un minuto, la diferencia entre lo que se ve y lo que se vive.</p>
+    <p>Imagina que por fin consigues boletos para el concierto de tus sueños. El escenario es espectacular: pantallas gigantes, luces y un sonido perfecto. Pero al entrar al estadio no hay señalización, los pasillos parecen un laberinto, tu asiento está del otro lado y para comprar agua tienes que cruzar todo el lugar. Al salir, recuerdas más la frustración que la música.</p>
+
+    <figure class="figura" id="fig-1">
+      <img src="img/R1_concierto_storytelling.webp" width="1200" height="675" alt="Ilustración: un escenario iluminado arriba y, abajo, un plano del estadio con pasillos en laberinto, dos personas confundidas y los letreros Agua y Salida lejos de ellas." decoding="async">
+      <figcaption>
+        <b>Figura 1. El concierto de tus sueños.</b> El escenario es la interfaz (UI); los pasillos del estadio son la experiencia (UX). Elaboración propia (Valdez Zavala y Damián Polo, 2026).
+        <span class="botones-figura">
+          <button type="button" class="btn ver-recurso" data-recurso="0">Ver en grande</button>
+          <a class="btn btn-secundario" href="#fig-2">Siguiente recurso →</a>
+        </span>
+      </figcaption>
+    </figure>
+
+    <h3>¿Qué nos enseña?</h3>
+    <p>El escenario representa la interfaz: lo que se ve. La logística del estadio representa la experiencia de usuario: lo que se vive. Un producto digital puede verse increíble y aun así fracasar si la persona no encuentra lo que busca, se pierde o necesita demasiados pasos. Como dice Norman (2013), el buen diseño es el que se adapta a las personas, no el que les exige adaptarse.</p>
+    <blockquote>«Lo que se ve atrae; lo que se vive es lo que se recuerda.»</blockquote>
+
+    <div class="actividad" id="actividad-concierto">
+      <h3>Decide tú</h3>
+      <p>Entras a la página de boletos y ves varios botones poco claros y un aviso de cargos adicionales. ¿Qué harías?</p>
+      <div class="opciones">
+        <button type="button" class="btn opcion" data-respuesta="Pulsaste el botón más grande sin leer y terminaste con un cargo extra. La interfaz te llevó a adivinar: eso es un problema de UX, aunque el botón se viera bonito.">A. Pulsar el botón más grande sin leer</button>
+        <button type="button" class="btn opcion" data-respuesta="Revisaste precio, horario y condiciones. Tomaste una buena decisión, pero la página te obligó a investigar lo que debía estar claro desde el inicio.">B. Revisar precio final, horario y condiciones</button>
+        <button type="button" class="btn opcion" data-respuesta="Cerraste la página porque no inspiraba confianza. Es la reacción más común: cuando la experiencia falla, la persona simplemente se va.">C. Cerrar la página porque no inspira confianza</button>
+      </div>
+      <p class="respuesta" id="respuesta-concierto" aria-live="polite"></p>
+    </div>
+
+    <nav class="nav-seccion" aria-label="Navegación del apartado 2">
+      <a href="#introduccion" class="anterior">← Introducción</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#ui-ux" class="siguiente">Siguiente: UI y UX →</a>
+    </nav>
+  </section>
+
+  <!-- 03 UI y UX -->
+  <section class="seccion" id="ui-ux">
+    <p class="etiqueta">03 · Conceptos</p>
+    <h2>¿Qué es UI y qué es UX?</h2>
+    <div class="dos-columnas">
+      <div>
+        <h3>UI · Interfaz de usuario</h3>
+        <p>UI significa <em>User Interface</em>. Es todo lo que la persona ve y toca en la pantalla: colores, tipografía, íconos, botones y menús. Responde a la pregunta «¿cómo se ve?».</p>
+        <ul>
+          <li>Contraste y legibilidad de los textos.</li>
+          <li>Tamaño y ubicación de los controles.</li>
+          <li>Consistencia en colores, íconos y estados.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>UX · Experiencia de usuario</h3>
+        <p>UX significa <em>User Experience</em>. Son las percepciones y respuestas de una persona al usar un producto, sistema o servicio (ISO, 2019). Responde a «¿cómo funciona y cómo me hace sentir?».</p>
+        <ul>
+          <li><strong>Útil:</strong> ayuda a completar una tarea real.</li>
+          <li><strong>Usable:</strong> se entiende sin esfuerzo innecesario.</li>
+          <li><strong>Confiable:</strong> comunica estados y errores con claridad.</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="figura" id="fig-2">
+      <img src="img/R2_infografia_UI_vs_UX.webp" width="1200" height="675" alt="Infografía de un iceberg: en la punta visible dice UI con color, tipografía, botones e íconos; debajo del agua dice UX con flujo, navegación, ergonomía, accesibilidad e investigación de usuarios." decoding="async">
+      <figcaption>
+        <b>Figura 2. UI vs. UX: el iceberg.</b> La interfaz es solo la punta; la experiencia está debajo. Elaboración propia con base en ISO (2019).
+        <span class="botones-figura">
+          <button type="button" class="btn ver-recurso" data-recurso="1">Ver en grande</button>
+          <a class="btn btn-secundario" href="#fig-1">← Recurso anterior</a>
+          <a class="btn btn-secundario" href="#fig-3">Siguiente recurso →</a>
+        </span>
+      </figcaption>
+    </figure>
+
+    <nav class="nav-seccion" aria-label="Navegación del apartado 3">
+      <a href="#concierto" class="anterior">← El concierto</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#comparacion" class="siguiente">Siguiente: UI vs. UX →</a>
+    </nav>
+  </section>
+
+  <!-- 04 Comparación -->
+  <section class="seccion" id="comparacion">
+    <p class="etiqueta">04 · Comparación</p>
+    <h2>UI vs. UX: distintas, pero inseparables</h2>
+    <p>Una pantalla puede lucir espectacular y, aun así, ser frustrante; también puede ser funcional, pero difícil de leer. Nielsen (1994) resume la usabilidad en diez heurísticas; varias de ellas (visibilidad del estado, control del usuario, prevención de errores) dependen de la UX tanto como de la UI.</p>
+    <div class="tabla-scroll">
+    <table class="tabla">
+      <caption>Tabla 1. Diferencias entre UI y UX</caption>
+      <thead><tr><th scope="col">Aspecto</th><th scope="col">UI · Interfaz</th><th scope="col">UX · Experiencia</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Pregunta clave</th><td>¿Cómo se ve?</td><td>¿Cómo funciona y cómo me hace sentir?</td></tr>
+        <tr><th scope="row">Ejemplo</th><td>Color, forma y tamaño del botón «Buscar»</td><td>Que el botón «Buscar» se alcance con el pulgar</td></tr>
+        <tr><th scope="row">Se mide con</th><td>Consistencia visual, contraste y legibilidad</td><td>Tiempo de tarea, número de toques, errores</td></tr>
+        <tr><th scope="row">Herramientas</th><td>Guías de estilo, paletas y tipografía</td><td>Pruebas con usuarios y mapas de calor</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <nav class="nav-seccion" aria-label="Navegación del apartado 4">
+      <a href="#ui-ux" class="anterior">← UI y UX</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#ergonomia" class="siguiente">Siguiente: Ergonomía →</a>
+    </nav>
+  </section>
+
+  <!-- 05 Ergonomía -->
+  <section class="seccion" id="ergonomia">
+    <p class="etiqueta">05 · Ergonomía</p>
+    <h2>Ergonomía y alcance del pulgar</h2>
+    <p class="entrada">No todas las zonas de la pantalla cuestan el mismo esfuerzo.</p>
+    <p>Hoober (2013) observó a 1,333 personas usando su teléfono en la calle, en aeropuertos y en el transporte. El <strong>49 %</strong> lo sostenía con una sola mano y operaba la pantalla únicamente con el pulgar. Por eso la parte inferior y central se alcanza sin esfuerzo, mientras que las esquinas superiores obligan a estirar la mano o a cambiar de agarre.</p>
+
+    <figure class="figura" id="fig-3">
+      <img src="img/R3_zonas_alcance_pulgar.webp" width="1200" height="675" alt="Diagrama de dos celulares, mano derecha y mano izquierda, con tres zonas de color: natural en la parte inferior, de estiramiento en la parte media y difícil en las esquinas superiores. La lupa de búsqueda cae en la zona difícil." decoding="async">
+      <figcaption>
+        <b>Figura 3. Zonas de alcance del pulgar.</b> La lupa de búsqueda cae en la zona difícil con ambas manos. Elaboración propia con base en Hoober (2013).
+        <span class="botones-figura">
+          <button type="button" class="btn ver-recurso" data-recurso="2">Ver en grande</button>
+          <a class="btn btn-secundario" href="#fig-2">← Recurso anterior</a>
+          <a class="btn btn-secundario" href="#fig-4">Siguiente recurso →</a>
+        </span>
+      </figcaption>
+    </figure>
+
+    <div class="tarjetas">
+      <div class="tarjeta"><h3>Zona natural</h3><p>Parte inferior y central. Aquí deben ir las acciones más frecuentes: reproducir, buscar y navegar.</p></div>
+      <div class="tarjeta"><h3>Zona de estiramiento</h3><p>Laterales y parte media alta. Adecuada para acciones secundarias.</p></div>
+      <div class="tarjeta"><h3>Zona difícil</h3><p>Esquinas superiores. Exige cambiar de agarre. En YouTube Music, el ícono de búsqueda está justo aquí.</p></div>
+    </div>
+    <p class="nota">Recomendación: los objetivos táctiles deben medir al menos 48 × 48 dp (Google, s.f.) y las acciones clave deben ubicarse en la zona natural del pulgar.</p>
+
+    <nav class="nav-seccion" aria-label="Navegación del apartado 5">
+      <a href="#comparacion" class="anterior">← UI vs. UX</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#mapas" class="siguiente">Siguiente: Mapas de calor →</a>
+    </nav>
+  </section>
+
+  <!-- 06 Mapas de calor -->
+  <section class="seccion" id="mapas">
+    <p class="etiqueta">06 · Investigación</p>
+    <h2>Mapas de calor</h2>
+    <p class="entrada">Dónde tocamos realmente la pantalla.</p>
+    <p>Un mapa de calor es una representación visual que pinta con colores intensos las zonas de la pantalla donde las personas tocan con más frecuencia y con colores suaves las que casi no usan. Para construirlo activamos en Android la opción «Mostrar toques», grabamos la pantalla durante tres sesiones de uso de YouTube Music y marcamos cada toque sobre la interfaz.</p>
+
+    <figure class="figura" id="fig-4">
+      <img src="img/R4_mapa_calor_toques.webp" width="1200" height="675" alt="Pantalla de inicio de YouTube Music con manchas de calor: muy intensas en la barra inferior y el miniplayer, medias en el centro y una mancha aislada en la esquina superior derecha, sobre la lupa de búsqueda." decoding="async">
+      <figcaption>
+        <b>Figura 4. Mapa de calor de toques.</b> Tres sesiones grabadas con la opción «Mostrar toques» de Android. Elaboración propia (Valdez Zavala y Damián Polo, 2026).
+        <span class="botones-figura">
+          <button type="button" class="btn ver-recurso" data-recurso="3">Ver en grande</button>
+          <a class="btn btn-secundario" href="#fig-3">← Recurso anterior</a>
+          <a class="btn btn-secundario" href="#fig-5">Siguiente recurso →</a>
+        </span>
+      </figcaption>
+    </figure>
+
+    <h3>Lo que encontramos</h3>
+    <ol class="hallazgos">
+      <li>La mayoría de los toques se concentra en la barra inferior y en la zona central, donde están las canciones y los controles de reproducción.</li>
+      <li>La búsqueda es de las acciones más usadas, pero su ícono está en la esquina superior derecha: la zona más difícil para el pulgar.</li>
+      <li>Llegar a «Ayuda» exige 4 toques entre menús poco visibles; varios toques se repitieron porque no se encontraba la opción.</li>
+    </ol>
+    <p class="nota">Regla clave: si la zona más usada coincide con la más difícil de alcanzar, hay un problema de diseño.</p>
+
+    <nav class="nav-seccion" aria-label="Navegación del apartado 6">
+      <a href="#ergonomia" class="anterior">← Ergonomía</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#rediseno" class="siguiente">Siguiente: Antes y después →</a>
+    </nav>
+  </section>
+
+  <!-- 07 Rediseño -->
+  <section class="seccion" id="rediseno">
+    <p class="etiqueta">07 · Propuesta</p>
+    <h2>Antes y después: rediseño de YouTube Music</h2>
+    <p class="entrada">Aplicamos lo aprendido para mejorar la experiencia.</p>
+    <div class="dos-columnas">
+      <div class="caja caja-antes">
+        <h3>Antes: el problema</h3>
+        <ul>
+          <li>El ícono de búsqueda está en la esquina superior derecha, fuera del alcance cómodo del pulgar.</li>
+          <li>Las portadas grandes ocupan casi toda la pantalla y obligan a desplazarse mucho.</li>
+          <li>Llegar a «Ayuda» requiere 4 toques entre menús poco visibles.</li>
+        </ul>
+      </div>
+      <div class="caja caja-despues">
+        <h3>Después: nuestra propuesta</h3>
+        <ul>
+          <li>Búsqueda a media altura y una pestaña «Buscar» en la barra inferior, dentro de la zona natural.</li>
+          <li>Contenido en cuadrícula de 2 columnas: se ve más con menos desplazamiento.</li>
+          <li>Nueva pestaña «Menú»: Ayuda en solo 2 toques (−50 %).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dos-columnas">
+      <figure class="figura" id="fig-5">
+        <img src="img/R5_comparativo_problema_solucion.webp" width="1200" height="765" alt="Comparativo de dos pantallas de celular: a la izquierda la versión actual con búsqueda arriba a la derecha y portadas grandes; a la derecha la propuesta con búsqueda al alcance del pulgar, cuadrícula de dos columnas y pestaña Menú." decoding="async">
+        <figcaption>
+          <b>Figura 5. Problema vs. solución.</b> Elaboración propia a partir del wireframe de la Etapa 1.
+          <span class="botones-figura">
+            <button type="button" class="btn ver-recurso" data-recurso="4">Ver en grande</button>
+            <a class="btn btn-secundario" href="#fig-4">← Recurso anterior</a>
+            <a class="btn btn-secundario" href="#fig-6">Siguiente recurso →</a>
+          </span>
+        </figcaption>
+      </figure>
+      <figure class="figura" id="fig-6">
+        <img id="animacion-r6" src="img/R6_animacion_toques.webp" width="1200" height="675" alt="Animación que compara cuántos toques se necesitan para llegar a Ayuda: cuatro en la versión actual y dos en la propuesta." decoding="async">
+        <figcaption>
+          <b>Figura 6. ¿Cuántos toques para llegar a Ayuda?</b> Animación: 4 toques en la versión actual contra 2 en la propuesta. Elaboración propia.
+          <span class="botones-figura">
+            <button type="button" class="btn" id="btn-reproducir">▶ Reproducir de nuevo</button>
+            <button type="button" class="btn ver-recurso" data-recurso="5">Ver en grande</button>
+            <a class="btn btn-secundario" href="#fig-5">← Recurso anterior</a>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+    <blockquote>Rediseñar no es decorar: es reorganizar para que el usuario llegue más rápido y con menos esfuerzo.</blockquote>
+
+    <nav class="nav-seccion" aria-label="Navegación del apartado 7">
+      <a href="#mapas" class="anterior">← Mapas de calor</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#conclusiones" class="siguiente">Siguiente: Conclusiones →</a>
+    </nav>
+  </section>
+
+  <!-- 08 Conclusiones -->
+  <section class="seccion" id="conclusiones">
+    <p class="etiqueta">08 · Cierre</p>
+    <h2>Conclusiones</h2>
+    <p>UI y UX trabajan juntas. La calidad de una experiencia no depende solo del aspecto de la interfaz, sino de lo que las personas consiguen hacer con ella. El diseño debe comenzar con una necesidad; después hay que entender el recorrido, detectar los obstáculos, proponer soluciones y comprobarlas con pruebas de uso.</p>
+    <p>Nuestro ejercicio con YouTube Music lo muestra en pequeño: observar cómo se sostiene el celular y dónde se toca la pantalla bastó para encontrar tres problemas concretos y proponer una solución que reduce a la mitad los toques para llegar a Ayuda. Una buena UX es invisible: cuando funciona, nadie la nota; cuando falla, todos la sufren.</p>
+    <nav class="nav-seccion" aria-label="Navegación del apartado 8">
+      <a href="#rediseno" class="anterior">← Antes y después</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#recursos" class="siguiente">Siguiente: Recursos →</a>
+    </nav>
+  </section>
+
+  <!-- 09 Galería -->
+  <section class="seccion" id="recursos">
+    <p class="etiqueta">09 · Galería</p>
+    <h2>Recursos multimedia</h2>
+    <p>Los seis recursos de esta página, en orden. Haz clic en cualquiera para verlo en grande y navegar entre ellos con los botones Anterior y Siguiente.</p>
+    <ul class="galeria" id="galeria">
+      <li><button type="button" class="ver-recurso" data-recurso="0"><img src="img/R1_concierto_storytelling.webp" width="1200" height="675" alt="" loading="lazy"><span>R1 · Ilustración</span></button><a href="#fig-1">Ir al apartado 2</a></li>
+      <li><button type="button" class="ver-recurso" data-recurso="1"><img src="img/R2_infografia_UI_vs_UX.webp" width="1200" height="675" alt="" loading="lazy"><span>R2 · Infografía</span></button><a href="#fig-2">Ir al apartado 3</a></li>
+      <li><button type="button" class="ver-recurso" data-recurso="2"><img src="img/R3_zonas_alcance_pulgar.webp" width="1200" height="675" alt="" loading="lazy"><span>R3 · Diagrama</span></button><a href="#fig-3">Ir al apartado 5</a></li>
+      <li><button type="button" class="ver-recurso" data-recurso="3"><img src="img/R4_mapa_calor_toques.webp" width="1200" height="675" alt="" loading="lazy"><span>R4 · Mapa de calor</span></button><a href="#fig-4">Ir al apartado 6</a></li>
+      <li><button type="button" class="ver-recurso" data-recurso="4"><img src="img/R5_comparativo_problema_solucion.webp" width="1200" height="765" alt="" loading="lazy"><span>R5 · Comparativo</span></button><a href="#fig-5">Ir al apartado 7</a></li>
+      <li><button type="button" class="ver-recurso" data-recurso="5"><img src="img/R6_animacion_toques.webp" width="1200" height="675" alt="" loading="lazy"><span>R6 · Animación</span></button><a href="#fig-6">Ir al apartado 7</a></li>
+    </ul>
+    <nav class="nav-seccion" aria-label="Navegación del apartado 9">
+      <a href="#conclusiones" class="anterior">← Conclusiones</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#referencias" class="siguiente">Siguiente: Referencias →</a>
+    </nav>
+  </section>
+
+  <!-- 10 Referencias -->
+  <section class="seccion" id="referencias">
+    <p class="etiqueta">10 · Fuentes</p>
+    <h2>Referencias</h2>
+    <p>Fuentes citadas en esta página, en formato APA, 7.ª edición.</p>
+    <ul class="referencias">
+      <li>Google. (s.f.). <i>Accessibility basics</i>. Material Design 3. <a href="https://m3.material.io/foundations/accessible-design/accessibility-basics" target="_blank" rel="noopener">https://m3.material.io/foundations/accessible-design/accessibility-basics</a></li>
+      <li>Hoober, S. (18 de febrero de 2013). <i>How do users really hold mobile devices?</i> UXmatters. <a href="https://www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php" target="_blank" rel="noopener">https://www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php</a></li>
+      <li>International Organization for Standardization. (2019). <i>Ergonomics of human-system interaction — Part 210: Human-centred design for interactive systems</i> (ISO 9241-210:2019). <a href="https://www.iso.org/standard/77520.html" target="_blank" rel="noopener">https://www.iso.org/standard/77520.html</a></li>
+      <li>Nielsen, J. (1994). <i>10 usability heuristics for user interface design</i>. Nielsen Norman Group. <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" rel="noopener">https://www.nngroup.com/articles/ten-usability-heuristics/</a></li>
+      <li>Norman, D. (2013). <i>The design of everyday things</i> (Ed. rev.). Basic Books.</li>
+      <li>Valdez Zavala, D. A., y Damián Polo, M. F. (2026). <i>Recursos multimedia R1–R6 para la wiki «Experiencia de usuario»</i> [Ilustración, infografía, diagrama, mapa de calor, comparativo y animación]. Elaboración propia.</li>
+    </ul>
+    <nav class="nav-seccion" aria-label="Navegación del apartado 10">
+      <a href="#recursos" class="anterior">← Recursos</a>
+      <a href="#inicio" class="subir">↑ Subir</a>
+      <a href="#colabora" class="siguiente">Siguiente: Colabora →</a>
+    </nav>
+  </section>
+
+  <!-- Colabora -->
+  <section class="seccion seccion-gris" id="colabora">
+    <p class="etiqueta">Comunidad</p>
+    <h2>Colabora</h2>
+    <p>¿Has notado una dificultad al usar una app? Cuéntanos cuál y cómo la mejorarías. Este formulario es una demostración: no envía datos a ningún servidor.</p>
+    <form class="formulario" id="form-colabora">
+      <label for="col-nombre">Nombre o alias</label>
+      <input type="text" id="col-nombre" required>
+      <label for="col-tema">Tema</label>
+      <select id="col-tema">
+        <option>UI y diseño visual</option><option>UX y navegación</option><option>Caso YouTube Music</option><option>Accesibilidad</option><option>Otro</option>
+      </select>
+      <label for="col-texto">Tu aportación</label>
+      <textarea id="col-texto" rows="4" required></textarea>
+      <button type="submit" class="btn">Enviar aportación</button>
+      <p class="respuesta" id="respuesta-colabora" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- Acerca -->
+  <section class="seccion" id="acerca">
+    <p class="etiqueta">Universidad del Valle de México</p>
+    <h2>Acerca de nosotros</h2>
+    <p>Wiki Design es el proyecto integrador de la materia Experiencia de Usuario. El grupo construye una wiki con ocho temas; esta página corresponde al tema <strong>Experiencia de usuario</strong>.</p>
+    <p>Contenido, recursos multimedia y maquetación de esta página: <strong>Daniel Alejandro Valdez Zavala</strong> y <strong>María Fernanda Damián Polo</strong>. La identidad visual (paleta azul marino, morado, lavanda y verde olivo; tipografías Montserrat y Open Sans) es la que el grupo eligió en la Etapa 3.</p>
+    <nav class="nav-seccion" aria-label="Navegación final">
+      <a href="#referencias" class="anterior">← Referencias</a>
+      <a href="#inicio" class="subir">↑ Volver al inicio</a>
+      <span></span>
+    </nav>
+  </section>
+
+
+  <!-- Enlaces finales del tema -->
+  <nav class="enlaces-finales" aria-label="Enlaces del tema">
+    <div>
+      <h3>Apartados</h3>
+      <a href="#introduccion">Introducción</a>
+      <a href="#concierto">El concierto</a>
+      <a href="#ui-ux">UI y UX</a>
+      <a href="#comparacion">UI vs. UX</a>
+      <a href="#ergonomia">Ergonomía</a>
+      <a href="#mapas">Mapas de calor</a>
+      <a href="#rediseno">Antes y después</a>
+      <a href="#conclusiones">Conclusiones</a>
+    </div>
+    <div>
+      <h3>Recursos</h3>
+      <a href="#fig-1">R1 Ilustración</a>
+      <a href="#fig-2">R2 Infografía</a>
+      <a href="#fig-3">R3 Diagrama</a>
+      <a href="#fig-4">R4 Mapa de calor</a>
+      <a href="#fig-5">R5 Comparativo</a>
+      <a href="#fig-6">R6 Animación</a>
+    </div>
+    <div>
+      <h3>Más</h3>
+      <a href="#recursos">Galería</a>
+      <a href="#referencias">Referencias</a>
+      <a href="#colabora">Colabora</a>
+      <a href="#acerca">Acerca de nosotros</a>
+      <a href="#inicio" class="volver-arriba">↑ Volver arriba</a>
+    </div>
+  </nav>
+</main>
+<footer class="site-footer">
+  <a class="logo-pie" href="#inicio" aria-label="Volver al inicio de WikiDesign">
+    <img src="assets/logo-legal.png" alt="WikiDesign">
+  </a>
+  <div class="footer-copy">
+    <p class="copyright">© 2026 WikiDesign | Proyecto académico sin fines de lucro.</p>
+    <p>Sitio desarrollado por estudiantes de diferentes licenciaturas de la Universidad del Valle de México (UVM) con fines educativos y sin propósitos comerciales. Este proyecto es independiente y no representa oficialmente a la UVM. Los derechos de los recursos de terceros pertenecen a sus respectivos titulares.</p>
+  </div>
+</footer>
+
+<!-- Botón flotante para subir -->
+<a href="#inicio" class="flotante" id="btn-subir" aria-label="Volver arriba" hidden>↑</a>
+
+<!-- Visor de recursos (lightbox) -->
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-labelledby="visor-titulo">
+  <div class="visor-caja">
+    <button type="button" class="visor-cerrar" id="visor-cerrar" aria-label="Cerrar">✕</button>
+    <img id="visor-img" src="img/R1_concierto_storytelling.webp" alt="">
+    <p class="visor-pie"><b id="visor-titulo"></b> <span id="visor-texto"></span></p>
+    <div class="visor-nav">
+      <button type="button" class="btn btn-secundario" id="visor-anterior">← Anterior</button>
+      <span id="visor-contador"></span>
+      <a class="btn btn-secundario" id="visor-ir" href="#">Ir al apartado</a>
+      <button type="button" class="btn btn-secundario" id="visor-siguiente">Siguiente →</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/navegacion.js"></script>
+</body>
+</html>

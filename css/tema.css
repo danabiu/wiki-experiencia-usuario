@@ -1,0 +1,156 @@
+/* =====================================================
+   WikiDesign · Tema «Experiencia de usuario»
+   Estilos propios del contenido del tema.
+   Se cargan después de estilos.css (la hoja general del
+   grupo) y solo agregan lo que el tema necesita.
+   ===================================================== */
+
+/* ---------- Tipografías locales (respaldo sin internet) ---------- */
+@font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("../fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-display: swap; src: url("../fonts/montserrat-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 400; font-display: swap; src: url("../fonts/open-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 400; font-style: italic; font-display: swap; src: url("../fonts/open-sans-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 600; font-display: swap; src: url("../fonts/open-sans-latin-600-normal.woff2") format("woff2"); }
+
+html { scroll-padding-top: 90px; }
+.saltar { position: absolute; left: -9999px; background: var(--oliva); color: #fff; padding: 8px 14px; z-index: 200; }
+.saltar:focus { left: 10px; top: 10px; }
+.btn-menu { display: none; }
+
+/* ---------- Menú lateral: estado activo ---------- */
+.panel-menu.sumario nav { padding-bottom: 1rem; }
+.panel-menu.sumario ol { margin: 14px 0 4px; padding-left: 22px; }
+.panel-menu.sumario li { margin-bottom: 8px; }
+.panel-menu.sumario a.activo { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.panel-menu.temas a[aria-current="true"] span { font-weight: 700; }
+
+/* ---------- Contenido del tema ---------- */
+.contenido-tema { max-width: 1120px; padding-bottom: 60px; }
+.contenido-tema::before { background-image: url("../assets/icons/experiencia-usuario.png"); }
+.contenido-tema h1, .contenido-tema h2 { color: var(--oliva); margin: 0 0 14px; line-height: 1.15; }
+.contenido-tema h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; text-transform: uppercase; }
+.contenido-tema h2 { font-size: 1.8rem; font-weight: 800; }
+.contenido-tema h3 { font-size: 1.1rem; font-weight: 700; color: var(--lila); margin: 0 0 10px; }
+.contenido-tema p { margin: 0 0 16px; }
+.contenido-tema ul, .contenido-tema ol { padding-left: 22px; }
+.contenido-tema li { margin-bottom: 6px; }
+
+.seccion { padding: 34px 0 10px; border-bottom: 1px solid #3C4063; margin-bottom: 20px; }
+.etiqueta { font-family: "Montserrat", sans-serif; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lila); margin-bottom: 8px; }
+.entrada { font-size: 1.1rem; color: #ecebf3; }
+.nota { background: var(--azul-panel); border-left: 4px solid var(--oliva); padding: 12px 16px; border-radius: 0 12px 12px 0; }
+blockquote { margin: 22px 0; padding: 14px 20px; border-left: 4px solid var(--lila); background: var(--azul-profundo); font-style: italic; font-size: 1.05rem; border-radius: 0 12px 12px 0; }
+.seccion-gris { background: var(--azul-profundo); padding: 34px 30px 20px; border-radius: 24px; border: 0; }
+
+.tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+.tarjeta { background: var(--azul-panel); border-radius: 18px; padding: 18px; }
+.tarjeta h3 { font-size: 1rem; margin-bottom: 6px; }
+.tarjeta p { margin: 0; font-size: .95rem; }
+.dos-columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.caja { background: var(--azul-panel); border-radius: 18px; padding: 18px 20px; border-top: 6px solid var(--morado); }
+.caja-despues { border-top-color: var(--oliva); }
+.caja ul { margin: 0; }
+.hallazgos li { margin-bottom: 10px; }
+
+/* Tabla */
+.tabla-scroll { overflow-x: auto; margin: 10px 0 20px; }
+.tabla { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.tabla caption { text-align: left; font-style: italic; color: #b9bdcb; padding: 6px 0; caption-side: top; }
+.tabla th, .tabla td { padding: 10px 14px; border: 1px solid #3C4063; text-align: left; vertical-align: top; }
+.tabla thead th { background: var(--morado); color: #fff; font-family: "Montserrat", sans-serif; }
+.tabla tbody th { background: var(--azul-panel); font-weight: 600; width: 22%; }
+
+/* Figuras y recursos */
+.figura { margin: 24px 0; background: var(--azul-panel); border-radius: 22px; overflow: hidden; }
+.figura img { display: block; width: 100%; background: #f4f4f7; }
+.figura figcaption { padding: 14px 18px; font-size: .9rem; font-family: "Lora", Georgia, serif; }
+.figura figcaption b { color: #fff; font-family: "Open Sans", sans-serif; }
+.botones-figura { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-family: "Open Sans", sans-serif; }
+
+/* Botones */
+.btn {
+  display: inline-block; border: 0; cursor: pointer;
+  background: var(--oliva); color: #fff;
+  font-family: "Montserrat", sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: .04em; text-transform: uppercase;
+  padding: 9px 16px; border-radius: 24px; text-decoration: none;
+}
+.btn:hover { background: #93a455; color: #fff; }
+.btn-secundario { background: transparent; border: 2px solid var(--lila); color: var(--lila); padding: 7px 14px; }
+.btn-secundario:hover { background: var(--lila); color: var(--fondo); }
+
+/* Navegación entre apartados */
+.nav-seccion { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 6px; padding-top: 14px; border-top: 1px dashed #3C4063; font-family: "Montserrat", sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.nav-seccion a { text-decoration: none; padding: 8px 14px; border-radius: 24px; color: var(--lila); }
+.nav-seccion a:hover { background: var(--azul-panel); }
+.nav-seccion .siguiente { color: #fff; background: var(--morado); }
+.nav-seccion .siguiente:hover { background: var(--lila); color: var(--fondo); }
+.nav-seccion .subir { color: #b9bdcb; }
+
+/* Actividad */
+.actividad { background: var(--azul-profundo); border-radius: 22px; padding: 20px 22px; margin: 22px 0; }
+.opciones { display: grid; gap: 10px; margin-bottom: 12px; }
+.opcion { text-align: left; text-transform: none; letter-spacing: 0; font-family: "Open Sans", sans-serif; font-weight: 600; font-size: .95rem; background: var(--azul-panel); border-radius: 14px; }
+.opcion:hover, .opcion.elegida { background: var(--morado); }
+.respuesta { min-height: 24px; margin: 0; color: #e8e6f8; }
+
+/* Galería */
+.galeria { list-style: none; padding: 0 !important; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 20px 0; }
+.galeria li { background: var(--azul-panel); border-radius: 18px; overflow: hidden; text-align: center; padding-bottom: 10px; margin: 0; }
+.galeria button { display: block; width: 100%; border: 0; padding: 0; background: none; cursor: pointer; color: inherit; font: inherit; }
+.galeria button:hover img { opacity: .85; }
+.galeria img { display: block; width: 100%; }
+.galeria span { display: block; padding: 10px 0 4px; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: .85rem; }
+.galeria a { font-size: .85rem; }
+
+/* Referencias */
+.referencias { list-style: none; padding: 0 !important; }
+.referencias li { padding: 10px 0 10px 36px; text-indent: -36px; border-bottom: 1px solid #3C4063; font-size: .95rem; font-family: "Lora", Georgia, serif; }
+.referencias a { word-break: break-all; }
+
+/* Formulario */
+.formulario { max-width: 560px; display: flex; flex-direction: column; gap: 6px; }
+.formulario label { font-weight: 600; font-size: .9rem; margin-top: 8px; }
+.formulario input, .formulario select, .formulario textarea { font: inherit; padding: 9px 12px; border-radius: 12px; border: 1px solid #3C4063; background: var(--fondo); color: var(--gris-claro); }
+.formulario .btn { align-self: flex-start; margin-top: 12px; }
+
+/* Enlaces finales del tema */
+.enlaces-finales { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 30px; padding: 24px 28px; background: var(--azul-panel); border-radius: 22px; font-size: .9rem; }
+.enlaces-finales h3 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--oliva); margin-bottom: 8px; }
+.enlaces-finales a { display: block; color: var(--gris-claro); text-decoration: none; padding: 3px 0; }
+.enlaces-finales a:hover { color: #fff; text-decoration: underline; }
+.enlaces-finales .volver-arriba { margin-top: 10px; color: var(--lila); font-weight: 700; }
+
+/* Botón flotante */
+.flotante { position: fixed; right: 22px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; background: var(--oliva); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.4); z-index: 90; }
+.flotante:hover { background: var(--lila); color: var(--fondo); }
+.flotante[hidden] { display: none; }
+
+/* Visor de recursos */
+.visor { position: fixed; inset: 0; z-index: 300; background: rgba(8,12,20,.9); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.visor[hidden] { display: none; }
+.visor-caja { position: relative; background: var(--azul-panel); border-radius: 22px; max-width: 980px; width: 100%; max-height: 95vh; overflow: auto; padding: 18px; }
+.visor-caja img { display: block; width: 100%; background: #f4f4f7; border-radius: 12px; }
+.visor-cerrar { position: absolute; top: 12px; right: 12px; width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--morado); color: #fff; font-size: 1.1rem; cursor: pointer; z-index: 2; }
+.visor-pie { margin: 12px 0; font-size: .92rem; }
+.visor-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+#visor-contador { font-family: "Montserrat", sans-serif; font-weight: 700; color: var(--lila); }
+
+/* ---------- Diseño adaptable ---------- */
+@media (max-width: 1000px) {
+  .tarjetas, .galeria, .enlaces-finales { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .barra-superior nav, .buscador { display: none; }
+  .btn-menu { display: block; border: 0; background: var(--morado); color: #fff; font: inherit; padding: 8px 14px; border-radius: 24px; cursor: pointer; }
+  .sidebar { background: var(--fondo); transform: translateX(-100%); transition: transform .25s; z-index: 150; box-shadow: 4px 0 20px rgba(0,0,0,.4); }
+  .sidebar.abierto { transform: none; }
+  .contenido { margin-left: 0; padding: 18px 16px 40px; }
+  .tarjetas, .galeria, .dos-columnas, .enlaces-finales { grid-template-columns: 1fr; }
+  .nav-seccion { flex-wrap: wrap; }
+  .site-footer { grid-template-columns: 1fr; border-radius: 2rem 2rem 0 0; }
+  .site-footer .logo-pie { justify-self: center; width: 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sidebar { transition: none; }
+}
