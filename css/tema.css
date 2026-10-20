@@ -154,3 +154,17 @@ blockquote { margin: 22px 0; padding: 14px 20px; border-left: 4px solid var(--li
   html { scroll-behavior: auto; }
   .sidebar { transition: none; }
 }
+
+/* ---------- Temas desplegables con las páginas de cada pareja ---------- */
+.panel-menu.temas details.tema > summary { display: flex; align-items: center; gap: .55rem; cursor: pointer; list-style: none; color: var(--gris-claro); font-family: "Open Sans", sans-serif; font-size: 13px; font-weight: 400; line-height: 1.35; }
+.panel-menu.temas details.tema > summary::-webkit-details-marker { display: none; }
+.panel-menu.temas details.tema > summary::after { content: "▾"; margin-left: auto; font-size: .8rem; color: var(--gris-claro); transition: transform .2s; }
+.panel-menu.temas details.tema[open] > summary::after { transform: rotate(180deg); }
+.panel-menu.temas details.tema > summary:hover span { text-decoration: underline; }
+.panel-menu.temas .parejas { list-style: none; margin: 6px 0 8px; padding-left: 30px; }
+.panel-menu.temas .parejas li { margin-bottom: 5px; }
+.panel-menu.temas .parejas a { display: block; font-size: 12px; color: #e4e2f5; padding: 2px 0; }
+.panel-menu.temas .parejas a:hover { color: #fff; text-decoration: underline; }
+.panel-menu.temas .parejas a[aria-current="true"] { font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+.panel-menu.temas .tema-pendiente { display: flex; align-items: center; gap: .55rem; color: #c5c3d8; font-size: 13px; opacity: .7; cursor: default; }
+.panel-menu.temas .tema-activo > details > summary span { font-weight: 700; }
