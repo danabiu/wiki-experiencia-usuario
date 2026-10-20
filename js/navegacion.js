@@ -34,6 +34,23 @@ lateral.addEventListener("click", function (e) {
   }
 });
 
+/* ---------- Marcar la pareja y el tema de la página actual (según la URL) ---------- */
+function rutaLimpia(u) {
+  try {
+    var x = new URL(u, location.href);
+    return (x.hostname + x.pathname).toLowerCase().replace(/index\.html$/, "").replace(/\/+$/, "");
+  } catch (e) { return ""; }
+}
+var rutaActual = rutaLimpia(location.href);
+document.querySelectorAll(".parejas a").forEach(function (a) {
+  if (rutaActual && rutaLimpia(a.href) === rutaActual) {
+    a.setAttribute("aria-current", "true");
+    a.setAttribute("href", "#inicio");
+    a.removeAttribute("target");
+    a.closest(".tema-item").classList.add("tema-activo");
+  }
+});
+
 /* ---------- Submenú de cada tema: se abre con el mouse encima y también con clic (táctil) ---------- */
 document.querySelectorAll(".tema-boton").forEach(function (b) {
   b.addEventListener("click", function () {
