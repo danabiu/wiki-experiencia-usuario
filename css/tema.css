@@ -178,6 +178,11 @@ blockquote { margin: 22px 0; padding: 14px 20px; border-left: 4px solid var(--li
 .sidebar, .panel-menu.temas, .panel-menu.temas nav { overflow: visible; }
 .sidebar { z-index: 95; }
 .panel-menu.temas { z-index: 3; }
+.panel-menu.temas nav { padding-bottom: 2.6rem; }           /* más alto, para que la curva no tape las flechas */
+.panel-menu.temas .tema-boton { padding-right: 1.5rem; }    /* las flechas quedan dentro del fondo morado */
+.panel-menu.temas .tema-boton::after { position: absolute; right: .35rem; }
+.panel-menu.temas .tema-item { position: relative; }
+
 @media (max-width: 760px) {
   .panel-menu.temas .parejas { position: static; margin: 4px 0 8px 28px; min-width: 0; border-radius: 12px; box-shadow: none; }
 }
