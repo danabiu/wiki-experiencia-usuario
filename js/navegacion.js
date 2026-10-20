@@ -34,6 +34,23 @@ lateral.addEventListener("click", function (e) {
   }
 });
 
+/* ---------- Submenú de cada tema: se abre con el mouse encima y también con clic (táctil) ---------- */
+document.querySelectorAll(".tema-boton").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var item = b.parentNode;
+    var abierto = item.classList.toggle("abierto");
+    b.setAttribute("aria-expanded", abierto ? "true" : "false");
+    document.querySelectorAll(".tema-item.abierto").forEach(function (o) {
+      if (o !== item) { o.classList.remove("abierto"); o.querySelector(".tema-boton").setAttribute("aria-expanded", "false"); }
+    });
+  });
+});
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".tema-item")) {
+    document.querySelectorAll(".tema-item.abierto").forEach(function (o) { o.classList.remove("abierto"); o.querySelector(".tema-boton").setAttribute("aria-expanded", "false"); });
+  }
+});
+
 /* ---------- Resaltar el apartado que se está leyendo ---------- */
 var enlacesSumario = document.querySelectorAll("#sumario a");
 var secciones = [];
